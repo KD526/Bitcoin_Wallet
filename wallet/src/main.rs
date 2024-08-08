@@ -11,5 +11,11 @@ fn main() {
     println!("Descriptor: {}", descriptor);
     // dbg!(descriptor);
 
-    let wallet = Wallet::new(descriptor.into(), None, Network::Testnet)?;
+    let wallet = Wallet::new(
+        descriptor.into(),
+        None,
+        Network::Testnet,
+        MemoryDatabase::default(),
+    )?;
+    dbg!(wallet);
 }
