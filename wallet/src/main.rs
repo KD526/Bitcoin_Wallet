@@ -7,12 +7,14 @@ use bdk::{
 };
 
 fn main() {
+    //set up wallet
     println!("Initiate wallet!....");
     from_filename(".env").ok();
 
     let descriptor = env::var("WALLET_DESCRIPTOR").unwrap();
     println!("Descriptor: {}", descriptor);
 
+    //initialize wallet instance
     let wallet = Wallet::new(
         descriptor.into(),
         None,
